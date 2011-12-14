@@ -1,0 +1,33 @@
+<h1>Register in</h1>
+<fieldset>
+<legend>Enter Your Details</legend>
+
+<%= form_for :user do |f| %>
+   <div class="form_row">
+    <%= f.label :screen_name%>
+	<%= f.text_field :screen_name, 
+					 :size => User::SCREEN_NAME_SIZE,
+					 :maxlength => User::SCREEN_NAME_MAX_LENGTH %>
+   </div>
+  <div class="form_row">
+    <%= f.label :email %>
+    <%= f.text_field :email, 
+					 :size => User::EMAIL_SIZE,
+					 :maxlength => User::EMAIL_MAX_LENGTH %>
+  </div>
+ <div class="form_row">
+    <%= f.label :password %>
+    <%= f.password_field :password,
+						 :size => User::PASSWORD_SIZE,
+						 :maxlength => User::PASSWORD_MAX_LENGTH %>
+ </div>
+
+
+ 
+ <div class="form_row">
+    <%= f.submit "Register!" %>
+  </div>
+  
+
+  <fieldset>
+<% end %>

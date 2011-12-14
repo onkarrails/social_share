@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+ <head>
+	<title><%= @title %>vjkggjkhkh</title>
+	<%= stylesheet_link_tag "site" %>
+ </head>
+	<body>
+	<div id="whole_page">
+	   <div id="header">RailsSpace</div>
+         <div id="nav">
+			<%= link_to_unless_current "Home", :action => "index" ,:contorller=>"site"%> |
+			<%= link_to_unless_current "About Us", :action => "about", :contorller=>"site" %> |
+			<%= link_to_unless_current "Help", :action => "help",:contorller=>"site" %>
+		</div>
+		<div id="content">
+		 
+		 <%= yield %>
+			<% if flash[:notice] -%>
+				<div id="notice"><%= flash[:notice] %></div>
+			<% end -%>
+			<%= @content_for_layout %>
+		
+			<% if ENV["RAILS_ENV"] == "development" %>
+				<%= debug(params) %>
+			<% end %>
+			</div>
+		</div>
+</div>
+</body>
+</html>
+		
+
+		
+		
